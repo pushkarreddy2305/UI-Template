@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "required": [
+        "earnedPoints"
+    ],
+    "properties": {
+        "earnedPoints": {
+            "type": "integer"
+        },
+        "expirationDate": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "earningDate": {
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+}
+

@@ -1,0 +1,69 @@
+<div style="text-align:center">
+    <h2>Systems</h2>
+    <div class="container" style="text-align:left">
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="addProvider()">Add Provider</button>
+      </div>
+        <mat-expansion-panel *ngFor="let system of systems" style="margin:.5vw">
+            <mat-expansion-panel-header style="font-size:18px">
+              <mat-panel-title style="width:20vw">
+                  Name: <b>{{system.label}}</b>
+                </mat-panel-title>
+              <mat-panel-description style="text-align:left">
+                  Type: {{system.type}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <form *ngIf="openEditor===system._id" class="update-form" [formGroup]="updateForm">
+              <mat-form-field class="full-width">
+                  <mat-hint>System Name</mat-hint>
+                  <input matInput
+                  formControlName="systemName"
+                  value="{{system.label}}"/>
+                </mat-form-field>
+              <br/>
+              <mat-form-field>
+                <mat-select formControlName="systemType" placeholder="System Type">
+                  <mat-option value="Source Control">Source Control</mat-option>
+                  <mat-option value="Planning">Planning</mat-option>
+                  <mat-option value="Documentation">Documentation</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br/>
+              <mat-form-field class="full-width">
+                  <mat-hint>System Credentials</mat-hint>
+                  <input 
+                  matInput value="{{system.credentials}}"
+                  formControlName="systemCredentials"
+                  [type]="'password'"
+                  />
+              </mat-form-field>
+              <br/>
+              <mat-form-field class="location-field">
+                  <mat-hint>System Location</mat-hint>
+                  <textarea 
+                  matInput value="{{system.location}}"
+                  formControlName="systemLocation"
+                  ></textarea>
+              </mat-form-field>
+              <br/>
+            <div class="button-group">
+              <button mat-button color="primary" (click)="updateSystem(system._id)">Save Changes</button>
+              <button mat-button color="error" (click)="cancelUpdate()">Cancel</button>            
+            </div>
+            </form>
+              <div class="description">
+                <b>Type: </b> {{system.type}}
+              </div>
+              <br/>
+              <div class="location">
+                <b>Location: </b> 
+                <a href="{{system.location}}">{{system.location}}</a>
+              </div>
+              <br/>
+            <div class="button-group">
+              <button mat-raised-button color="primary" (click)="editSystem(system._id)">Edit</button>
+              <button mat-raised-button color="warn" (click)="openDialog(system._id, system.label)">Delete</button>
+            </div>
+          </mat-expansion-panel>
+    </div>
+  </div>

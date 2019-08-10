@@ -1,0 +1,55 @@
+<div style="text-align:center">
+  <h2>Projects</h2>
+  <div class="container" style="text-align:left">
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="createProj()">Create</button>
+    </div>
+    <div class="search-container">
+      <app-search-projects (sendToComponent)="nameToSearch=$event"></app-search-projects>
+      <br/>
+    </div>
+      <mat-expansion-panel *ngFor="let project of projects" style="margin:.5vw">
+          <mat-expansion-panel-header style="font-size:18px" *ngIf="project.name.includes(nameToSearch) || nameToSearch === undefined">
+            <mat-panel-title style="width:20vw">
+                Name: <b>{{project.name}}</b>
+              </mat-panel-title>
+            <mat-panel-description style="text-align:left">
+                Status: {{project.status}}
+              </mat-panel-description>
+          </mat-expansion-panel-header>
+          <form *ngIf="openEditor===project._id" class="update-form" [formGroup]="updateForm">
+              <mat-form-field class="full-width">
+                <textarea 
+                formControlName="projectName"
+                 matInput value="{{project.name}}"></textarea>
+              </mat-form-field>
+            <br/>
+              <mat-form-field class="full-width">
+                  <textarea 
+                  matInput value="{{project.description}}"
+                  formControlName="projectDescription"
+                  ></textarea>
+              </mat-form-field>
+            <br/>
+          <div class="button-group">
+            <button mat-button color="primary" (click)="updateProj(project._id)">Save Changes</button>
+            <button mat-button color="error" (click)="cancelUpdate()">Cancel</button>            
+          </div>
+          </form>
+            <div class="description">
+              <b>Description: </b> {{project.description}}
+            </div>
+            <br/>
+            <div class="resource-links" *ngIf="project.confluence">
+            <b>Resource Links: </b>
+            <br/>
+            <a href="{{project.confluence.base}}{{project.confluence.webui}}">Confluence</a>
+            </div>
+            <br/>
+          <div class="button-group">
+            <button mat-raised-button color="primary" (click)="editProject(project._id)">Edit</button>
+            <button mat-raised-button color="warn" (click)="openDialog(project._id, project.name)">Delete</button>
+          </div>
+        </mat-expansion-panel>
+  </div>
+</div>

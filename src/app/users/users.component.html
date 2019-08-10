@@ -1,0 +1,49 @@
+<div style="text-align:center">
+  <h2>Users</h2>
+  <div class="container" style="text-align:left">
+    <div class="search-container">
+      <app-search-projects (sendToComponent)="nameToSearch=$event"></app-search-projects>
+      <br/>
+    </div>
+    <span 
+    class="checkbox-container" 
+    style="text-align:right" 
+    *ngFor="let role of roles"
+    >
+    <mat-checkbox 
+    [checked]="true" 
+    color="primary" 
+    (change)="setFilter($event.checked, role )"
+    >
+    {{role}}
+    </mat-checkbox>
+    </span>
+    <div 
+    class="panel-container" 
+    *ngFor="let user of userList"
+    >
+      <mat-expansion-panel
+      style="margin:.5vw"  
+      *ngIf="containsRole(user.roles) && (user.username.includes(nameToSearch) || nameToSearch === undefined)"
+      >
+          <mat-expansion-panel-header >
+            <mat-panel-title style="font-size:20px">
+                Name: {{user.username}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="roles">
+            <b>Roles:</b><div *ngFor="let role of user.roles">
+              <div>{{role}}</div>
+            </div>
+          </div>
+          <br/>
+          <button 
+          mat-raised-button color="warn" 
+          (click)="openDialog(user._id, user.name)"
+          >
+          Delete
+          </button>
+        </mat-expansion-panel>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<mat-card class="create-card">
+  <mat-card-header>
+    <mat-card-title>Add a Provider to the Platform</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="update-form" [formGroup]="systemCreateForm">
+      <mat-form-field>
+          <mat-select formControlName="systemType" placeholder="Select Type">
+            <mat-option value="Source Control">Source Control</mat-option>
+            <mat-option value="Planning">Planning</mat-option>
+            <mat-option value="Documentation">Documentation</mat-option>
+          </mat-select>
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="full-width">
+          <mat-hint>System Name</mat-hint>
+          <input matInput
+          formControlName="systemName"
+          />
+        </mat-form-field>
+      <br/>
+      <mat-form-field class="full-width">
+          <mat-hint>System Credentials</mat-hint>
+          <input 
+          matInput 
+          formControlName="systemCredentials"
+          [type]="'password'"
+          />
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="location-field">
+          <mat-hint>System Location</mat-hint>
+          <textarea 
+          matInput 
+          formControlName="systemLocation"
+          ></textarea>
+      </mat-form-field>
+      <br/>
+    <div class="button-group">
+      <button mat-button color="primary" (click)="addProvider()">Add Provider</button>
+      <button mat-button color="error" (click)="cancelAction()">Cancel</button>            
+    </div>
+    </form>
+  </mat-card-content>
+</mat-card>

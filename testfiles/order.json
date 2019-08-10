@@ -1,0 +1,9 @@
+{
+  "deliveryMethod": "Emailed",
+  "memberID": "9100112345678901",
+  "orderID": "20b123456",
+  "orderPlacedDate": "yesterday",
+  "orderStatus": "Canceled",
+  "partnerItemID": "ID234",
+  "qtyOrdered": 8
+}

@@ -1,0 +1,71 @@
+h1 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-left:2rem;
+  font-family: IBM Plex Sans;
+  color:#003B70;
+}
+
+.container {
+  width: 900ex;
+  height: 450px;
+  padding-top:2ex;
+  padding-bottom:6ex;
+  padding-right:20ex;
+}
+label.dragdrop {
+  border: 2px dashed grey;
+  border-radius: 10px;
+  width:75%;
+  height:25rem;
+  margin-left:2rem;
+  margin-top:2rem;
+}
+label .choose{
+  background: rgb(84, 157, 203);
+  height: 51px;
+  border-radius: 10px;
+  width: 45%;
+  color: white;
+  font-family: IBM Plex Sans;
+}
+label .choose:hover{
+cursor:pointer;
+}
+label .uploadInput{
+  background: rgb(84, 157, 203);
+  color: white;
+}
+input[hidden]{
+  display: none;
+}
+.uploadSection .btn{
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: lightblue;
+  border-width: 0;
+  margin-bottom: 0px;
+  line-height: initial;
+}
+.uploadSection button.upload{
+  background-color: blue
+}
+.uploadSection .displayName{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    width: 60vw;
+}
+.uploadSection .displayName .fileName {
+    width: 100%;
+}
+.uploadSection .displayName .fileMessage {
+  white-space: nowrap;
+  color: red;
+  padding-right: 10px;
+  font-size: 0.75em;
+  line-height: 1.75em;
+}
+.uploadSection .displayName .fileMessage.done{
+  color: lightgreen;
+}

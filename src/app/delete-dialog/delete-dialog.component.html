@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete Project</h1>
+<div mat-dialog-content>
+  <p>Are you sure you want to delete <b>{{data.name}}</b> and all of its associated components?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">No Thanks</button>
+  <button mat-raised-button color="warn" (click)="onYesClick()">Ok</button>
+</div>

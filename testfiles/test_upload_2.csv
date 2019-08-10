@@ -1,0 +1,3 @@
+memberID,memberAddress,memberName,memberTelephone,memberZip,tierName,awardCategory,catalogName,catalogNumber,deliveryMethod,itemName,orderID,orderPlacedDate,orderStatus,partnerItemID,pointValue,qtyOrdered,earnedPoints,earningEvent,expirationDate,earningID,earningDate
+4827190000000002,5 Smith Lane,James Barone,(631) 456-3123,11746,,,,,,,,,,,,,500,Spent Money,2026-01-31T15:04:05Z,53fnjfte,2019-02-01T15:04:05Z
+4827190000000002,5 Smith Lane,James Barone,(631) 456-3123,11746,ThankYou Plus,Gift Cards,T.J.Maxx,1923,Emailed,Gift Card Name,k6kdsk453,2019-05-31T15:04:05Z,Issued,itemID,100,1,,,,,

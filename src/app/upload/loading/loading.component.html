@@ -1,0 +1,26 @@
+<div class="loadingContainer">
+  <div class="pending" *ngIf="((data.status | async)?.status !== 'done'); else done">
+    <div>
+      Adding Transactions
+    </div>
+    <div>
+      Please wait!
+    </div>
+    <div class="spinnerContainer">
+      <mat-spinner [diameter]="70"> </mat-spinner>
+    </div>
+  </div>
+  <ng-template #done>
+    <div class="pending">
+      <div>
+        Success!
+      </div>
+      <div>
+        {{(data.status | async)?.message}} added to the blockchain Network
+      </div>
+      <div class="checkIcon">
+        <i class="material-icons">check_circle</i>
+      </div>
+    </div>
+  </ng-template>
+</div>

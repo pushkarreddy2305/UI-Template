@@ -1,0 +1,21 @@
+.loadingContainer{
+  height: 100%;
+  display: grid;
+}
+
+.loadingContainer .pending{
+  text-align: center;
+  font-weight: 900;
+  margin: auto;
+
+}
+.loadingContainer .pending .spinnerContainer,
+.loadingContainer .pending .checkIcon
+{
+  display: inline-block;
+  margin-top: 50px;
+}
+.loadingContainer .pending .checkIcon i{
+  font-size: 80px;
+  color: lightgreen
+}

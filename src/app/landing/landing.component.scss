@@ -1,0 +1,71 @@
+app-landing{
+  height:100%;
+}
+mat-drawer-container{
+  padding:0;
+}
+mat-drawer-content {
+  background-color: #EDF0F5
+}
+mat-drawer{
+
+  background-color:white;
+}
+mat-drawer .nav{
+  width: 10.5rem;
+  background-color: #ffffff;
+}
+
+.navbar-bg {
+  background-color: #003B70;
+  width: 100%;
+}
+
+a {
+  font-family:  IBM Plex Sans;
+  margin-top: 1.25rem;
+  color:#737373;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  text-decoration:none;
+}
+a:hover{
+  text-decoration: none;
+  color:#056DAE;
+  font-weight:bold;
+  cursor: pointer;
+}
+
+a.active-link {
+  color:#056DAE;
+  text-decoration:none;
+  outline:none;
+}
+
+img{
+  height: 2em;
+  width:4em;
+}
+
+h6{
+  color: white;
+  display: inline-block;
+  margin: 0;
+  vertical-align:bottom;
+}
+.sign-out-button:not([href]):not([tabindex]){
+  color:#737373;
+}
+.sign-out-button:hover:not([href]):not([tabindex]){
+  color:#056DAE;
+}
+
+.home{
+  cursor: pointer; 
+}
+
+app-upload{
+display: flex;
+flex: 3 1 90%;
+}

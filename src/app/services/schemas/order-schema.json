@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "required": [ "orderID" ],
+  "properties": {
+    "qtyOrdered": { "type" : "integer" },
+    "orderPlacedDate":{
+      "type": "string",
+      "format": "date-time"
+    },
+    "pointValue":{
+      "type" : "integer"
+    }
+  }
+}

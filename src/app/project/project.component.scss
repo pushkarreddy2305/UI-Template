@@ -1,0 +1,18 @@
+h2 {
+  margin-top:3%;
+  margin-bottom:1.5%;
+  color:#003B70;
+}
+.button-group{
+  display: flex;
+  flex-direction: row;
+}
+.container{
+  margin-left: 1vw
+}
+.description,.resource-links,button{
+  font-size:16px
+}
+button{
+  margin:.5vw
+}

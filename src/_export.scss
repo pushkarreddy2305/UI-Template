@@ -1,0 +1,50 @@
+$edited: false;
+$brand-01: #8000ff; // Expanded: border-left
+$brand-02: #f9fc74; // Row: hover
+$brand-03: #41d6c3;
+$ui-01: #2d3f49; // Background
+$ui-02: #073642; // Background, Table header, Zebra stripe
+$ui-03: #152935;
+$ui-04: #20343e; // Table border
+$ui-05: #8c9ba5; // Chevron, caret, overflow menu icon
+$text-01: #ffffff; // Text
+$text-02: #dfe6eb;
+$text-03: #8c9ba5;
+$inverse-01: #ffffff;
+$field-01: rgba(255, 255, 255, 0.1);
+$support-01: #ff5050;
+$support-02: #8cd211;
+$support-03: #efc100;
+$support-04: #7cc7ff;
+$use-layer: true;
+$input-border: 1px solid transparent;
+$input-label-weight: 700;
+$button-font-weight: 700;
+$button-font-size: 0.875rem;
+$button-border-radius: 0;
+$button-height: 40px;
+$button-padding: 0 1rem;
+$button-padding-sm: 0 0.5rem;
+$button-border-width: 2px;
+$accordion-flex-direction: row;
+$accordion-justify-content: flex-start;
+$accordion-arrow-margin: 0 0 0 0.25rem;
+$accordion-title-margin: 0 0 0 1rem;
+$accordion-content-padding: 0 1rem 0 1.75rem;
+$card-text-align: center;
+$card-flex-align: center;
+$checkbox-border-width: 2px;
+$snippet-background-color: $field-01;
+$content-switcher-border-radius: 8px;
+$content-switcher-option-border: 1px solid $brand-01;
+$data-table-heading-transform: uppercase;
+$data-table-heading-border-bottom: 1px solid $brand-01;
+$data-table-row-height: 2rem;
+$modal-border-top: $brand-01 4px solid;
+$modal-footer-background-color: $ui-03;
+$progress-indicator-bar-width: 1px inset transparent;
+$progress-indicator-stroke-width: 5;
+$progress-indicator-line-offset: 0.625rem;
+$radio-border-width: 2px;
+$structured-list-padding: 2rem;
+$structured-list-text-transform: uppercase;

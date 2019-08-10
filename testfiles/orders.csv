@@ -1,0 +1,3 @@
+deliveryMethod,memberID,orderID,orderPlacedDate,orderStatus,partnerItemID,qtyOrdered,
+Emailed,9100112345678900,18b123456,1/28/2018,Canceled,ID234,8
+Expedited,2220112345678900,19b123456,1/20/2019,Issued,ID234,6

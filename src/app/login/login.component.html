@@ -1,0 +1,43 @@
+<!-- Login Page -->
+<div class="loginContainer" fxLayout="column" fxLayoutAlign="space-between">
+  <div fxFlex="9 1 90%" fxLayoutAlign="center center">
+    <form class="login" (ngSubmit)="login()">
+      <br />
+      <div>
+        <!-- <label>Username:</label> -->
+        <input type="text" name="username" [(ngModel)]="user.name" 
+        placeholder="Username"
+        />
+      </div>
+      <div>
+        <!-- <label>Password:</label> -->
+        <input
+          i class="icon-user icon-large"
+          type="password"
+          id="myInput"
+          name="password"
+          [(ngModel)]="user.pass"
+          placeholder="Password"
+        />
+      </div>
+      <br />
+      <div message *ngIf="(message | async)?.text"
+        [ngClass]="{'warning':(message | async)?.type === MessageTypes.WARNING, 'error': (message | async)?.type === MessageTypes.ERROR}"
+      >{{ (message | async)?.text }}</div>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          value="Login"
+        >
+          Sign In
+        </button>
+      </div>
+    </form>
+  </div>  
+  <div style="text-align:center" fxFlex="1 1 10%">
+      <hr>
+      <p><strong>&copy; 2019</strong></p>
+    </div>
+    
+</div>

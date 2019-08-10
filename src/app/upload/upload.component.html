@@ -1,0 +1,34 @@
+<!-- <h1 fxLayout="row">Upload Reports</h1> -->
+<div>
+  <h1 fxLayout="row">Upload Reports</h1>
+  <div fxLayout="row" fxFlexFill>
+    <label class="dragdrop" 
+      fxHide="{{!!selectedFile}}" 
+      for="uploadInput" 
+      fxLayoutAlign="center center"
+      fxLayout="column"
+      (drop)=onDrop($event)
+      (dragover) = stopEvent($event)>   
+      <div class="choose" fxLayoutAlign="center center">Choose files to upload</div>
+      <div > Or drag and drop files here</div>
+    </label>
+    <div class="uploadSection" fxShow="{{!!selectedFile}}" >
+        <div fxLayout="row" class="displayName">
+          <div class="fileName">{{selectedFile ? selectedFile.name : "" }}</div>
+          <div *ngIf="(status | async)?.status" class="fileMessage"
+          [ngClass]="{'done':(status | async)?.status === 'done'}">{{(status | async)?.message}}
+          {{ (status | async)?.status === 'done' ? 'Completed' : '' }}</div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <button *ngIf="!(status | async)?.status" fxLayout="row" type="button" class="upload btn btn-primary" (click)="upload()">
+            Upload
+          </button>
+          <label for="uploadInput" class="choose btn btn-primary">
+            Choose another file
+          </label>
+        </div>
+
+    </div>
+  </div>
+  <input  id="uploadInput" type="file" (change)="onFileSelected($event)" hidden/>
+</div>

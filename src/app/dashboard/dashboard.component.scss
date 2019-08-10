@@ -1,0 +1,78 @@
+p {
+  padding-top: 2%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+spin-me-baby {
+  animation: spin 1s linear infinite;
+}
+
+table-row:hover {
+  background: #74e3ec; /* Old Browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #74e3ec,
+    #c7ffe2
+  ); /*Safari 5.1-6*/
+  background: -o-linear-gradient(to left, #74e3ec, #c7ffe2); /* Opera 11.1-12 */
+  background: -moz-linear-gradient(to left, #74e3ec, #c7ffe2); /* Fx 3.6-15 */
+  background: linear-gradient(to left, #74e3ec, #c7ffe2); /* Standard */
+}
+
+mat-grid-list{
+margin-top:2em;
+}
+h2 {
+  margin-top:3%;
+  margin-bottom:1.5%;
+  color:#003B70;
+}
+
+.dynamic-chart-button{
+  width:100%;
+  margin-top:1em;
+  border:inset;
+}
+.dynamic-chart-button:hover{
+  background-color:#007bff;
+  cursor: cell;
+  color:white;
+}
+.expPts{
+  position:inline-block;
+  font-size:4rem;
+  color:rgb(0, 60, 112);
+}
+.expPtsNm{
+
+  font-size:2rem;
+}
+.material-icons{
+color:rgb(0, 60, 112);
+font-size:3rem;
+}
+.dottedBorder:hover .material-icons,
+.material-icons:hover{
+  color:#007bff;
+  cursor:pointer;
+  }
+  
+  .dottedBorder{
+border:dashed;
+border-color:grey;
+  cursor:pointer;
+
+  }
+
+  .pts{
+    display:inline;
+
+  }

@@ -1,0 +1,40 @@
+<div fxLayout="column" fxFlexFill fxLayoutAlign="start center">
+  <nav class="navbar navbar-bg shadow p-2" fxFlex="1 1 7%" fxLayout="row" fxLayoutAlign="start center">
+    <div class="home" [routerLink]="['/dashboard']">
+      <h6>Employer's Holding CI/CD</h6>
+      <div>{{ name }}</div>
+    </div>
+    <h3 class="pointer ml-2" routerLink="/"></h3>
+    <!-- <a style="float:left" href="/account"><i class="fa fa-home fa-5x" style="color:white"></i></a> -->
+  </nav>
+  <div fxFlex="1 1 93%" fxFlexFill>
+    <div fxFlex="1 1 100%" fxLayout="column">
+      <mat-drawer-container fxFlex="10 1 100%">
+        <mat-drawer mode="side" opened>
+          <div class="nav" fxLayout="column">
+            <a [routerLink]="['/dashboard']" routerLinkActive="active-link">Dashboard</a>
+            <a [routerLink]="['/project']" routerLinkActive="active-link">Projects</a>
+            <a [routerLink]="['/users']" routerLinkActive="active-link">Users</a>
+            <a [routerLink]="['/systems']" routerLinkActive="active-link">Systems</a>
+            <a class="sign-out-button"(click)='logout()'>Sign Out</a>
+          </div>
+
+        </mat-drawer>
+        <mat-drawer-content fxLayout="column">
+          <div fxFlex style="overflow: auto;">
+            <div fxFill>
+              <router-outlet class='testClass'></router-outlet>
+            </div>
+          </div>
+          <div fxFlex="8%">
+            <app-footer></app-footer>
+          </div>
+        </mat-drawer-content>
+      </mat-drawer-container>
+    </div>
+  </div>
+</div>
+
+
+
+
