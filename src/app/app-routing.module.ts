@@ -12,6 +12,7 @@ import {UsersComponent} from "./users/users.component";
 import { CreateComponent } from './create/create.component';
 import { SystemsComponent } from './systems/systems.component';
 import { SystemsCreateComponent } from './systems-create/systems-create.component'
+import { TemplateComponent } from './template/template.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -28,7 +29,8 @@ const routes: Routes = [
       {path: 'systems', component: SystemsComponent},
       {path: 'systems/create', component: SystemsCreateComponent}
     ]
-  }
+  },
+  { path: 'template', component: TemplateComponent }
   // { path: "bar-chart", component: DashboardBarChartComponent}
 ];
 

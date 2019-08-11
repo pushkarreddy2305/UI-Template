@@ -33,6 +33,7 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { SearchProjectsComponent } from './search-projects/search-projects.component';
 import { SystemsComponent } from './systems/systems.component';
 import { SystemsCreateComponent } from './systems-create/systems-create.component';
+import { TemplateComponent } from './template/template.component';
 // import { UpdateComponent } from './update/update.component';
 
 /**
@@ -78,7 +79,8 @@ declare module 'ng2-charts' {
     DeleteDialogComponent,
     SearchProjectsComponent,
     SystemsComponent,
-    SystemsCreateComponent
+    SystemsCreateComponent,
+    TemplateComponent
   ],
   entryComponents: [
     LoadingComponent,
