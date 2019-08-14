@@ -34,6 +34,10 @@ import { SearchProjectsComponent } from './search-projects/search-projects.compo
 import { SystemsComponent } from './systems/systems.component';
 import { SystemsCreateComponent } from './systems-create/systems-create.component';
 import { TemplateComponent } from './template/template.component';
+import { TemplateCrudComponent } from './template-crud/template-crud.component';
+import { EdittemplateComponent } from './edittemplate/edittemplate.component';
+import { DataEntity } from './shared/data.service';
+import { CreateTemplateComponent } from './create-template/create-template.component';
 // import { UpdateComponent } from './update/update.component';
 
 /**
@@ -80,7 +84,10 @@ declare module 'ng2-charts' {
     SearchProjectsComponent,
     SystemsComponent,
     SystemsCreateComponent,
-    TemplateComponent
+    TemplateComponent,
+    TemplateCrudComponent,
+    EdittemplateComponent,
+    CreateTemplateComponent
   ],
   entryComponents: [
     LoadingComponent,
@@ -115,7 +122,7 @@ declare module 'ng2-charts' {
     MatButtonModule,
     MatCheckboxModule
   ],
-  providers: [{
+  providers: [DataEntity,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokeninjectorService,
     multi: true

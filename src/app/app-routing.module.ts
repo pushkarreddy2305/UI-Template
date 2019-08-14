@@ -13,6 +13,10 @@ import { CreateComponent } from './create/create.component';
 import { SystemsComponent } from './systems/systems.component';
 import { SystemsCreateComponent } from './systems-create/systems-create.component'
 import { TemplateComponent } from './template/template.component';
+import { TemplateCrudComponent } from './template-crud/template-crud.component';
+import { EdittemplateComponent } from './edittemplate/edittemplate.component';
+import { CreateTemplateComponent } from './create-template/create-template.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -22,6 +26,7 @@ const routes: Routes = [
     path: '', component: LandingComponent,
     children: [
       {path: 'project', component: ProjectComponent},
+
       {path: 'users', component: UsersComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'upload', component: UploadComponent},
@@ -30,7 +35,10 @@ const routes: Routes = [
       {path: 'systems/create', component: SystemsCreateComponent}
     ]
   },
-  { path: 'template', component: TemplateComponent }
+  { path: 'template', component: TemplateComponent },
+  { path: 'viewtemplates', component: TemplateCrudComponent },
+  { path: 'edittemplate', component: EdittemplateComponent},
+  { path: 'createtemplate', component:CreateTemplateComponent}
   // { path: "bar-chart", component: DashboardBarChartComponent}
 ];
 

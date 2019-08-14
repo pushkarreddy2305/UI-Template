@@ -1,0 +1,31 @@
+<div class="container template">
+<div class="row">
+  <div class="col-md-12">
+  <button type="button" class="btn btn-success create" (click)="create()">Create Template</button>
+</div>
+</div>
+<br>
+
+  <h2>Templates</h2>
+              
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Template Name</th>
+        <th>Template Location</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let i = index">
+        <td>{{i}}</td>
+        <td>{{item.templateName}}</td>
+        <td>{{item.templateLocation}}</td>
+        <td><button type="button" (click)="edit(item)" class="btn btn-primary">Edit</button></td>
+        <td><button type="button" (click)="delete(item)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
