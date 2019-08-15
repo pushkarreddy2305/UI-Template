@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ITemplates } from './entity/template.entity';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { environment } from './../../environments/environment';
 
 @Component({
   selector: 'app-create-template',
@@ -8,12 +11,24 @@ import { ITemplates } from './entity/template.entity';
 })
 export class CreateTemplateComponent {
 
-  data= new ITemplates();
-  constructor() { }
+  data = new ITemplates();
+  constructor(private router: Router,
+    private http: HttpClient, ) { }
 
 
-  createTemplate(data){
+  createTemplate(data) {
     console.log(data);
+    this.http.post(environment.backend.url + "/template",data)
+    .subscribe(
+      (res)=>{
+          console.log(res);
+          this.router.navigateByUrl('createtemplate').then(nav => {
+            console.log(nav);
+          }, err => {
+            console.log(err);
+          });
+        
+      })
   }
 
 }
