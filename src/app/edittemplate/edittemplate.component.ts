@@ -12,6 +12,7 @@ import { environment } from './../../environments/environment';
 export class EdittemplateComponent {
 
   data: any;
+  templateType: any;
 
   constructor(
     private service: DataEntity,
@@ -21,7 +22,19 @@ export class EdittemplateComponent {
 
     this.data = service.getEntityData();
     console.log(this.data);
+    this.getTemplateType(this.data.templateType);
 
+  }
+
+
+  getTemplateType(id) {
+    console.log(id);
+    this.http.get(environment.backend.url + "/template/templatetype/" + id)
+      .subscribe(
+        (res) => {
+          this.templateType = res;
+          console.log(this.templateType);
+        })
   }
 
   updateTemplate(data) {
@@ -29,20 +42,20 @@ export class EdittemplateComponent {
     console.log(data);
     var obj = {
       "name": data.templateName,
-      "location": data.templateLocation
+      "location": data.templateLocation,
+      "type": this.templateType.typeName
     }
     console.log(obj);
     this.http.put(environment.backend.url + "/template/" + data._id, obj)
       .subscribe(
         (res) => {
           console.log(res);
-          this.router.navigateByUrl('createtemplate').then(nav => {
+          this.router.navigateByUrl('viewtemplates').then(nav => {
             console.log(nav);
           }, err => {
             console.log(err);
           });
 
         })
-
   }
 }
