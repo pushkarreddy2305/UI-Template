@@ -18,17 +18,20 @@ export class CreateTemplateComponent {
 
   createTemplate(data) {
     console.log(data);
-    this.http.post(environment.backend.url + "/template",data)
-    .subscribe(
-      (res)=>{
+
+    this.http.post(environment.backend.url + "/template", data)
+      .subscribe(
+        (res) => {
           console.log(res);
-          this.router.navigateByUrl('createtemplate').then(nav => {
+          this.router.navigateByUrl('viewtemplates').then(nav => {
             console.log(nav);
           }, err => {
             console.log(err);
           });
-        
-      })
+        })
+
+
+
   }
 
 }
