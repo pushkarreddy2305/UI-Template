@@ -30,6 +30,7 @@ export class CreateComponent implements OnInit {
     description: ['', [Validators.required, Validators.maxLength(100)]],
     //projectTitle: ['', [Validators.required, Validators.maxLength(100)]],
     key: ['', [Validators.required, Validators.maxLength(100)]],
+    refreshprotect : []
    //. pageContent: ['', [Validators.required, Validators.maxLength(100)]]
   });
 
