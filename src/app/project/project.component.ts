@@ -4,7 +4,8 @@ import { ProjectService } from '../services/project.service';
 import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
-
+import { HttpClient } from '@angular/common/http';
+import { environment } from './../../environments/environment';
 
 @Component({
   selector: 'app-project',
@@ -15,16 +16,19 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 
 export class ProjectComponent implements OnInit {
   @Input() nameToSearch : string;
-  constructor(public dialog: MatDialog, private formBuilder: FormBuilder, private proj: ProjectService, private router: Router) {}
+  constructor(public dialog: MatDialog, private formBuilder: FormBuilder, private proj: ProjectService, private router: Router, private http: HttpClient) {}
   public projects;
   public openEditor = "";
+
+  projectsdata : {};
+
   updateForm = this.formBuilder.group({
     projectName: ['', Validators.required],
     projectDescription: ['', [Validators.required, Validators.maxLength(100)]]
   });
 
   ngOnInit() {
-    this.getProjects()
+     this.getProjects()
   }
   openDialog(id: string, name: string): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
@@ -32,13 +36,25 @@ export class ProjectComponent implements OnInit {
       data: {name, id, deleteProject: this.deleteProject.bind(this)}
     });
   }
+
   getProjects(){
-    this.proj.getProjects()
-    .subscribe(res=> {
-      this.projects=res;
-      console.log(this.projects)
-    })
+    this.http.get(environment.backend.url + "/project")
+    .subscribe(res => {
+      this.projectsdata = res;
+      console.log(this.projectsdata);
+    });
   }
+
+  delete(projectdata){
+    console.log(projectdata);
+    this.http.delete(environment.backend.url + "/project/" + projectdata._id)
+    .subscribe(res => {
+     console.log(res);
+     window.location.reload();
+    });
+  }
+
+
   getSpaceUrl(base:string, endpoint:string){
     return base + endpoint;
   }

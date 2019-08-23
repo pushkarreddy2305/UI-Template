@@ -43,6 +43,7 @@
     "mime": "^2.4.0",
     "mime-wrapper": "^1.0.2",
     "ng2-charts": "^1.6.0",
+    "ng2-search-filter": "^0.5.1",
     "papaparse": "^4.6.3",
     "request": "^2.88.0",
     "request-ip": "^2.1.3",

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'
 import { ProjectService } from '../services/project.service'
 import { Router } from '@angular/router';
+import { environment } from './../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { IEntity } from './entity/project.entity';
 
 @Component({
   selector: 'app-create',
@@ -11,44 +14,49 @@ import { Router } from '@angular/router';
 
 export class CreateComponent implements OnInit {
   public selectedMenu = 'Select Template'
+  
+  data = new IEntity();
   constructor(private formBuilder: FormBuilder,
     public project: ProjectService,
-    private router: Router
-    ) { }
+    private router: Router,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
   }
 
   projectForm = this.formBuilder.group({
-    projectName: ['', Validators.required],
-    projectDescription: ['', [Validators.required, Validators.maxLength(100)]],
-    projectTitle: ['', [Validators.required, Validators.maxLength(100)]],
-    projectKey: ['', [Validators.required, Validators.maxLength(100)]],
-    pageContent: ['', [Validators.required, Validators.maxLength(100)]]
+    name: ['', Validators.required],
+    description: ['', [Validators.required, Validators.maxLength(100)]],
+    //projectTitle: ['', [Validators.required, Validators.maxLength(100)]],
+    key: ['', [Validators.required, Validators.maxLength(100)]],
+   //. pageContent: ['', [Validators.required, Validators.maxLength(100)]]
   });
-  
-  create(){
+
+  create() {
     let project = {
       details: this.projectForm.value,
-      templateName: this.selectedMenu,
     }
-    this.project.createProject(project)
-    .subscribe(res=>{
-      console.log(res)
-      if (res.id) {
-        this.router.navigate(['/project'])
-        //set timeout to get back status
-      } else {
-        alert('there was an error creating the page')
-      }
-    })
+    project.details.components = [];
+    console.log(project.details);
+    this.http.post(environment.backend.url + "/project", project.details)
+    .subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigateByUrl('project').then(nav => {
+          console.log(nav);
+        }, err => {
+          console.log(err);
+        });
+      })
+
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['/project'])
   }
 
-  selectTemplate(templateName){
+  selectTemplate(templateName) {
     this.selectedMenu = templateName
   }
 }

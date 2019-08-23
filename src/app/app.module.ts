@@ -38,6 +38,8 @@ import { TemplateCrudComponent } from './template-crud/template-crud.component';
 import { EdittemplateComponent } from './edittemplate/edittemplate.component';
 import { DataEntity } from './shared/data.service';
 import { CreateTemplateComponent } from './create-template/create-template.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 // import { UpdateComponent } from './update/update.component';
 
 /**
@@ -96,6 +98,7 @@ declare module 'ng2-charts' {
   imports: [
     FlexLayoutModule,
     BrowserModule,
+    Ng2SearchPipeModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
