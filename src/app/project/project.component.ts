@@ -86,6 +86,8 @@ export class ProjectComponent implements OnInit {
     })
   }
 
+  
+
   editProject(id: string){
     this.openEditor = id;
     }

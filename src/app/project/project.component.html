@@ -15,6 +15,7 @@
           <th>Project Name</th>
           <th>Project Key</th>
           <th>Description</th>
+          <th>Refresh Protect</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -24,6 +25,7 @@
           <td>{{item.projectName}}</td>
           <td>{{item.key}}</td>
           <td>{{item.description}}</td>
+          <td>{{item.refreshProtect}}</td>
           <td><button type="button" (click)="edit(item)" class="btn btn-primary">Edit</button></td>
           <td><button type="button" (click)="delete(item)" class="btn btn-danger">Delete</button></td>
         </tr>
